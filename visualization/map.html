@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+</header>
+
+<body>
+  <style type="text/css">
+    /* Legend Position Style */
+    .legend {
+      position: absolute;
+      left: 800px;
+      top: 350px;
+    }
+  </style>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <h2> US Average Temperature Changes From 1912 To 2012 </h2>
+  <svg id="map" height="600" width="960"></svg>
+  <svg id="legends" height="100" width="200"></svg>
+
+  <script>
+    const svg = d3.select("svg#map");
+    const width = svg.attr("width");
+    const height = svg.attr("height");
+
+    let projection = d3.geoAlbersUsa()
+      .scale(1000)
+      .translate([width / 2, height / 2]);
+
+
+    d3.csv("GlobalLandTemperaturesByState.csv")
+      .then((data) => {
+
+        data.forEach((d, i) => {
+          d['AverageTemperature'] = Number(d['AverageTemperature']);
+          d['dt'] = Number(String(d['dt'].slice(0, 4)));
+          if (d['State'] == "Georgia (State)") {
+            d['State'] = 'Georgia'
+          }
+        });
+
+        data = data.filter((d) => { return d['Country'] == "United States" && d["AverageTemperature"] != "" && (d['dt'] == 1912 || d['dt'] == 2012); });
+        console.log(data);
+
+        let statespairs = [];
+        let states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+          'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+          'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas',
+          'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts',
+          'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska',
+          'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+          'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon',
+          'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota',
+          'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+          'West Virginia', 'Wisconsin', 'Wyoming', 'District Of Columbia'];
+
+        for (let i = 0; i < states.length; i++) {
+          let temp = {};
+          temp.state = states[i];
+          temp.old = 0;
+          temp.new = 0;
+          statespairs.push(temp);
+        }
+
+        data.forEach((d, i) => {
+          for (let i = 0; i < states.length; i++) {
+            if (d['State'] == statespairs[i].state) {
+              if (d['dt'] == 1912) {
+                statespairs[i].old = statespairs[i].old + d['AverageTemperature'];
+              }
+              else {
+                statespairs[i].new = statespairs[i].new + d['AverageTemperature'];
+              }
+            }
+          }
+        });
+
+        for (let i = 0; i < statespairs.length; i++) {
+          statespairs[i].old = statespairs[i].old / 12;
+          statespairs[i].new = statespairs[i].new / 12;
+        }
+        console.log(statespairs);
+
+        let difmin = d3.min(statespairs, (d) => { return d.new - d.old; });
+        let difmax = d3.max(statespairs, (d) => { return d.new - d.old; });
+        console.log(difmin);
+        console.log(difmax);
+
+        // fill the map
+        function colorScale(d) {
+          if (d < -1) {
+            return "RoyalBlue";
+          }
+          else if (d < 0) {
+            return "LightBlue"
+          }
+          else if (d > 4) {
+            return "Red";
+          }
+          else if (d > 3) {
+            return "Crimson"
+          }
+          else if (d > 2) {
+            return "IndianRed"
+          }
+          else if (d > 1) {
+            return "LightCoral";
+          }
+          else {
+            return "PeachPuff";
+          }
+        }
+
+        d3.json("us-states.json")
+          .then((mapdata) => {
+
+            mapdata = mapdata.features.filter((d) => { return d.properties.name != "Puerto Rico"; });
+            mapdata.forEach((d, i) => {
+              for (let i = 0; i < states.length; i++) {
+                let match;
+                for (let j = 0; j < states.length; j++) {
+                  if (statespairs[j].state == states[i]) {
+                    match = statespairs[j];
+                  }
+                }
+
+                if (d.properties.name == states[i]) {
+                  d.difference = match.new - match.old;
+                }
+              };
+            });
+            console.log(mapdata);
+
+            svg.append("g")
+              .selectAll("path")
+              .data(mapdata)
+              .join("path")
+              .attr("fill", (d) => { return colorScale(d.difference) })
+              .style("stroke", "#ffff")
+              .attr('d', d3.geoPath()
+                .projection(projection));
+
+            const lgd = d3.select("#legends");
+            const lwidth = lgd.attr("width");
+            const lheight = lgd.attr("height");
+            lgd.attr("class", "legend")
+              .attr("width", 140)
+              .attr("height", 200)
+              .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });
+
+            // create a list of keys
+            var keys = ["< -1 ℃", "-1 ~ 0 ℃", "0 ~ 1 ℃", "1 ~ 2 ℃", "2 ~ 3 ℃", "3 ~ 4 ℃", "> 4 ℃"];
+            let value = [-2, -0.1, 0.5, 1.5, 2.5, 3.5, 4.5];
+
+            let size = 20;
+            lgd.selectAll("path")
+              .data(value)
+              .enter()
+              .append("rect")
+              .attr("x", 10)
+              .attr("y", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+              .attr("width", size)
+              .attr("height", size)
+              .style("fill", function (d) { return colorScale(d) })
+
+            lgd.selectAll("text")
+              .data(keys)
+              .enter()
+              .append("text")
+              .attr("x", 40)
+              .attr("y", function (d, i) { return 23 + i * (size + 5)}) // 100 is where the first dot appears. 25 is the distance between dots
+              .style("fill", 'black')
+              .attr("font-size", "10")
+              .text(function (d) { return d })
+              // .attr("text-anchor", "left")
+              // .style("alignment-baseline", "middle")
+
+          });
+      });
+
+  </script>
+</body>
+
+</html>

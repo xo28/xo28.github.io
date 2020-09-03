@@ -1,0 +1,230 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans&display=swap');
+
+body, html{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: -webkit-linear-gradient(#eb7d00, #de2509);
+}
+
+#main{
+    margin: auto;
+    background: white;
+    width: 1000px;
+    box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.30);
+}
+
+/* Head */
+
+#head{
+    background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: url("images/header.jpg");
+    padding-bottom: 30px;
+}
+
+/* Text Styling */
+
+#source{
+    margin-left: 750;
+    font-size: 0.9em;
+    text-align: right;
+
+}
+
+#source a{
+    color: grey;
+}
+
+.red{
+    background: -webkit-linear-gradient(#eb7d00, #eb4700);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.heading {
+    font-size: 5em;
+    letter-spacing: 2px;
+    font-family: 'Alfa Slab One', sans-serif;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-top: 50px;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#subheader{
+    color: #de2509;
+    background: -webkit-linear-gradient(#eb7d00, #de2509);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  #subsubheader{
+    color: #de2509;
+    background: -webkit-linear-gradient(#eb7d00, #de2509);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .description{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    padding: 30px;
+    background: -webkit-linear-gradient(#eb7d00, #de2509);
+    color: white;
+    font-size: 1.1em;
+    border-radius: 20px;
+  }
+
+  #facts_figures{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    color: black;
+    font-size: 1.1em;
+  }
+
+  table td{
+      padding: 20px;
+  }
+
+
+/* Natalie's plot */
+
+svg{
+    margin: auto;
+    display: block;
+}
+
+.gridlines line {
+    stroke: #bbb;
+  }
+  .gridlines .domain {
+    stroke: none;
+  }
+  .axis line {
+    stroke: #bbb;
+  }
+  /* .axis .domain {
+    stroke: none;
+  } */
+
+
+  /* Buttons (navigation) */
+  
+  button{
+      background: #ebebeb;
+      width: 240px;
+      height: 40px;
+      margin: 5px;
+      border: none;
+      font-size: 1.05em;
+      border-radius: 4px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  button:hover{
+      color: white;
+        background: #f75800;
+
+  }
+
+  #buttons{
+        width: 100%;
+        text-align:center;
+  }
+
+
+/* Lily's plot */
+
+.y-gridlines line {
+    stroke: #bbb;
+}
+
+.y-gridlines .domain {
+    stroke: none;
+}
+
+#legend1{
+    width: 20px;
+    height: 20px;
+    background: #FF9505;
+    display: inline-block;
+}
+
+#legend2{
+    width: 20px;
+    height: 20px;
+    background: #EC4E20;
+    display: inline-block;
+}
+
+#legend3{
+    width: 20px;
+    height: 20px;
+    background: #016FB9;
+    display: inline-block;
+}
+
+#legend4{
+    width: 20px;
+    height: 20px;
+    background: #000000;
+    display: inline-block;
+}
+
+#legend5{
+    width: 20px;
+    height: 20px;
+    background: #686860;
+    display: inline-block;
+}
+
+#the_legend{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 110px;
+    width: 600px;
+}
+
+.legend{
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+}
+
+
+/* Footnotes */
+
+#footnotes{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+
+
+}
+.footnote{
+    font-size: 0.8em;
+    color: #878787;
+}
+
+#f_header{
+    margin-top: 50px;
+    text-align: center;
+}

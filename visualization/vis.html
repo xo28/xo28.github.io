@@ -1,0 +1,446 @@
+<html>
+    <header>
+        <script  type = "text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    </header>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+<body>
+
+  <style>
+    .gridlines line {
+      stroke: #bbb;
+    }
+    .gridlines .domain {
+      stroke: none;
+    }
+    .axis line {
+      stroke: #bbb;
+    }
+    .legend2 {
+      position: absolute;
+      left: 800px;
+      top: 350px;
+    }
+  </style>
+
+<div id="main">
+
+<div id="head">
+<p class='heading'>
+  Global
+  <span class="red">Warming</span>
+</p>
+
+<div id="buttons">
+  <a href="#plt2"><button type="button">Country Comparisons</button></a>
+  <a href="#plt"><button type="button">United States Temperatures</button></a>
+  <a href="#map"><button type="button">United States Heatmap</button></a>
+</div>
+</div>
+<span id="source">image source: <a href ="http://theconversation.com/keeping-global-warming-to-1-5-degrees-really-hard-but-not-impossible-84203">TheConversation.com</a></span>
+<div id="facts_figures">
+<p id="subheader">Why does it Matter?</p>
+<!-- Globe icon source iconmonstr-->
+<table>
+  <tr>
+    <td><img src="images/iconmonstr-globe-5-48.png"></td>
+    <td>"The Intergovernmental Panel on Climate Change (IPCC), which includes more than 1,300 scientists from the United States and other countries, forecasts a temperature rise of 2.5 to 10 degrees Fahrenheit over the next century".<sup>1</sup></td>
+  </tr>
+  <tr>
+    <td><img src="images/iconmonstr-globe-5-48.png"></td>
+    <td>The warming of the earth is extremely likely (>95% probability) caused by the result of human activity since the mid-20th century.<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><img src="images/iconmonstr-globe-5-48.png"></td>
+    <td>"Climate change encompasses not only rising average temperatures but also extreme weather events, shifting wildlife populations and habitats, rising seas, and a range of other impacts".<sup>3</sup></td>
+  </tr>
+</table>
+</div>
+
+<!-- Lily's plot-->
+<p id="subheader">Average Temperature Change by Country</p>
+<p id="subsubheader">from 1861-1871 to 2003-2013</p>
+
+<svg id="plt2"></svg>
+<text id="label" x="0" y="0"  text-anchor="start" alignment-baseline="after-edge"></text>
+    <script>
+        d3.csv("continents.csv")
+            .then( (data) => {
+                var svg2 = d3.select("#plt2")
+                    .attr("width", 600)
+                    .attr("height", 600);
+                const width = svg2.attr("width");
+                const height = svg2.attr("height");
+                const margin = {top: 20, right: 10, bottom: 100, left: 50};
+                const chartWidth = width - margin.left - margin.right;
+                const chartHeight = height - margin.top - margin.bottom;
+                var maxTemp = d3.max(data, function(d) { return Math.max(d["Temperature_Change"]); });
+                var tempScale = d3.scaleLinear()
+                    .domain([0, 3.1])
+                    .range([600, 0]);
+                var xScale = d3.scaleLinear()
+                    .domain([0, 16])
+                    .range([0, 500]);
+                console.log(chartWidth,chartHeight)
+                // For gridlines and ticks
+                let labels = svg2.append("g").attr("id","labels");
+                // Y axis
+                var y_axis = d3.axisLeft()
+                  .scale(tempScale)
+                  .ticks(6);
+                let y_gridlines = d3.axisLeft()
+                  .scale(tempScale)
+                  .ticks(6)
+                  .tickSize(-525)
+                  .tickFormat("")
+                labels.append("g")
+                  .attr("class", "y-axis")
+                  .attr("transform","translate("+margin.left+","+(-margin.bottom)+")")
+                  .call(y_axis)
+                  .selectAll("text")
+                  .style("text-anchor","end");
+                labels.append("g")
+                  .attr("class", "y-gridlines")
+                  .attr("transform","translate("+margin.left+","+(-margin.bottom)+")")
+                  .call(y_gridlines);
+                svg2.append("text")
+                  .attr("transform", "rotate(-90)")
+                  .attr("y", -20)
+                  .attr("x",-250)
+                  .attr("dy", "2em")
+                  .style("text-anchor", "middle")
+                  .text("Increase in Temperature (Celcius)");
+
+              var country_list= []
+              data.forEach(function(d){country_list.push(d["Country"])})
+              // X axis
+                var x_axis = d3.axisBottom()
+                  .scale(xScale)
+                  .ticks(16)
+                  .tickFormat(function(d,i){return country_list[i]})
+                labels.append("g")
+                  .attr("class", "x-axis")
+                  .attr("transform","translate("+margin.left+","+(chartHeight+margin.top)+")")
+                  .call(x_axis)
+                  .selectAll("text")
+                    .attr("transform", "translate("+22+","+0+"), rotate(-45)")
+                    .attr("fill", function(d,i){
+                      if (country_list[i]=="United States"){
+                        console.log(country_list[i])
+                        return "#EC4E20";
+                      }
+                      else {
+                        return "black";
+                      }
+                      })
+                    .style("text-anchor","end");
+
+              // Rectangles
+              // Used color generator to come up with colors for bar chart: https://coolors.co/686860-ec4e20-ff9505-016fb9-000000
+                data.forEach(function(d, i) {
+                  svg2.append("rect")
+                    .attr("x",margin.left+xScale(1)+xScale(i))
+                    .attr("y",tempScale(d["Temperature_Change"])-margin.bottom)
+                    .attr("width", 20)
+                    .attr("height", 600-tempScale(d["Temperature_Change"]))
+                    .attr("fill", function(){
+                      if (["Algeria", "South Africa", "Namibia","Egypt"].includes(d["Country"])){
+                        return "#EC4E20";
+                      }
+                      else if (["Finland","Germany","Ukraine","United Kingdom (Europe)", "Iceland"].includes(d["Country"])){
+                        return "#FF9505";
+                      }
+                      else if (["Brazil","Argentina","United States","Costa Rica"].includes((d["Country"]))){
+                        return "#016FB9";
+                      }
+                      else if (["China","Japan"].includes((d["Country"]))){
+                        return "#000000";
+                      }
+                      else if (d["Country"] == "Australia"){
+                        return "#686860";
+                      };
+                    })
+                    .attr("transform","translate(-10,0)");
+            });
+        })
+        </script>
+
+        <div id="the_legend">
+        <div id="legend1"></div><span class="legend"> Europe</span>
+        <div id="legend2"></div><span class="legend"> Africa</span>
+        <div id="legend3"></div><span class="legend"> America (N + S)</span>
+        <div id="legend4"></div><span class="legend"> Asia</span>
+        <div id="legend5"></div><span class="legend"> Oceania</span>
+      </div>
+
+<p class="description">This bar chart, displaying data from countries from 5 continents,
+  was made by first calculating (for each of the 16 countries) the total average temperature from 1861-1871 and from 2003-2013. The differences of these averages
+  (present minus past) are shown in the y-axis.
+</p>
+
+
+<!-- Natalie's Plot-->
+
+<p id="subheader">Average Change in Temperature in the United States</p>
+<p id="subsubheader">from 1823-2013</p>
+
+<svg id="plt" height="500" width="600" style="margin-top:50px ">
+</svg>
+
+<script>
+d3.csv("USA.csv")
+  .then( (data) => {
+
+    data.forEach( (d, i) => {
+      d['Avg_Temperature'] = Number(d['Avg_Temperature']);
+      d['Year'] = Number(d['Year']);
+    });
+
+    console.log(data);
+
+    const svg = d3.select("svg#plt");
+    const width = svg.attr("width");
+    const height = svg.attr("height");
+    const margins = {"top": 10, "right": 20, "bottom": 50, "left": 50};
+    const chartWidth = width - margins.left - margins.right;
+    const chartHeight = height - margins.top - margins.bottom;
+    let scatter1 = svg.append("g")
+                    .attr("transform","translate("+margins.left+","+margins.top+")");
+
+    var yearMin = d3.min(data, (d) => {return d['Year'];} );
+    var yearMax = d3.max(data, (d) => {return d['Year'];} );
+    var yearScale = d3.scaleLinear().domain([yearMin-23.4,yearMax+7]).range([0, chartWidth]);
+
+    var Avg_TemperatureMin = d3.min(data, (d) => {return d['Avg_Temperature'];} );
+    var Avg_TemperatureMax = d3.max(data, (d) => {return d['Avg_Temperature'];} );
+    var Avg_TemperatureScale = d3.scaleLinear().domain([7, Avg_TemperatureMax+.36]).range([chartHeight, 0]);
+
+    let leftAxis = d3.axisLeft(Avg_TemperatureScale).tickSize(chartWidth).tickFormat("");
+    let leftGridlines = d3.axisLeft(Avg_TemperatureScale)
+                          .tickSize(-chartWidth)
+                          .tickFormat(d3.format(""))
+
+    let grids = svg.append("g").attr("id","grids");
+
+    grids.append("g")
+                .attr("class", "y axis")
+                .attr("transform","translate("+(-margins.left)+","+margins.top+")")
+                .call(leftAxis)
+
+    grids.append("g")
+                .attr("class", "y gridlines")
+                .attr("transform","translate("+(margins.left)+","+margins.top+")")
+                .call(leftGridlines);
+
+    let bottomAxis = d3.axisBottom(yearScale).tickSize(-chartHeight).tickFormat("");
+    let bottomGridlines = d3.axisBottom(yearScale)
+                            .tickSize(-chartHeight-10)
+                            .tickFormat(d3.format(""))
+    grids.append("g")
+                  .attr("class", "x axis")
+                  .attr("transform","translate("+margins.left+","+(chartHeight+margins.top)+")")
+                  .call(bottomAxis);
+    grids.append("g")
+                  .attr("class", "x gridlines")
+                  .attr("transform","translate("+margins.left+","+(chartHeight+margins.top)+")")
+                  .call(bottomGridlines);
+
+
+    data.forEach( (d, i) => {
+        let circle = scatter1.append("circle")
+                                      .attr("cx", yearScale(d['Year']))
+                                      .attr("cy", Avg_TemperatureScale(d['Avg_Temperature']))
+                                      .attr("r", 4)
+                                      .attr("opacity", 1)
+                                      .style("fill", "red");
+});
+});
+</script>
+
+<p class="description">The graph above represents the trend of average temperatures in the United States. Data has been selected from a sample of approximately 200 years (at 5 year increments). The average temperature has been measured in degrees Celcius. </p>
+
+<p id="subheader"> US Average Temperature Changes From 1912 To 2012 </p>
+  <svg id="map" height="600" width="960"></svg>
+  <svg id="legends" height="100" width="200"></svg>
+
+  <script>
+    const svg = d3.select("svg#map");
+    const width = svg.attr("width");
+    const height = svg.attr("height");
+
+    let projection = d3.geoAlbersUsa()
+      .scale(1000)
+      .translate([width / 2, height / 2]);
+
+
+    d3.csv("GlobalLandTemperaturesByState.csv")
+      .then((data) => {
+
+        data.forEach((d, i) => {
+          d['AverageTemperature'] = Number(d['AverageTemperature']);
+          d['dt'] = Number(String(d['dt'].slice(0, 4)));
+          if (d['State'] == "Georgia (State)") {
+            d['State'] = 'Georgia'
+          }
+        });
+
+        data = data.filter((d) => { return d['Country'] == "United States" && d["AverageTemperature"] != "" && (d['dt'] == 1912 || d['dt'] == 2012); });
+        // console.log(data);
+
+        let statespairs = [];
+        let states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+          'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+          'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas',
+          'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts',
+          'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska',
+          'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
+          'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon',
+          'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota',
+          'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington',
+          'West Virginia', 'Wisconsin', 'Wyoming', 'District Of Columbia'];
+
+        for (let i = 0; i < states.length; i++) {
+          let temp = {};
+          temp.state = states[i];
+          temp.old = 0;
+          temp.new = 0;
+          statespairs.push(temp);
+        }
+
+        data.forEach((d, i) => {
+          for (let i = 0; i < states.length; i++) {
+            if (d['State'] == statespairs[i].state) {
+              if (d['dt'] == 1912) {
+                statespairs[i].old = statespairs[i].old + d['AverageTemperature'];
+              }
+              else {
+                statespairs[i].new = statespairs[i].new + d['AverageTemperature'];
+              }
+            }
+          }
+        });
+
+        for (let i = 0; i < statespairs.length; i++) {
+          statespairs[i].old = statespairs[i].old / 12;
+          statespairs[i].new = statespairs[i].new / 12;
+        }
+        // console.log(statespairs);
+
+        let difmin = d3.min(statespairs, (d) => { return d.new - d.old; });
+        let difmax = d3.max(statespairs, (d) => { return d.new - d.old; });
+        // console.log(difmin);
+        // console.log(difmax);
+
+        // fill the map
+        function colorScale(d) {
+          if (d < -1) {
+            return "RoyalBlue";
+          }
+          else if (d < 0) {
+            return "LightBlue"
+          }
+          else if (d > 4) {
+            return "Red";
+          }
+          else if (d > 3) {
+            return "Crimson"
+          }
+          else if (d > 2) {
+            return "IndianRed"
+          }
+          else if (d > 1) {
+            return "LightCoral";
+          }
+          else {
+            return "PeachPuff";
+          }
+        }
+
+        d3.json("us-states.json")
+          .then((mapdata) => {
+
+            mapdata = mapdata.features.filter((d) => { return d.properties.name != "Puerto Rico"; });
+            mapdata.forEach((d, i) => {
+              for (let i = 0; i < states.length; i++) {
+                let match;
+                for (let j = 0; j < states.length; j++) {
+                  if (statespairs[j].state == states[i]) {
+                    match = statespairs[j];
+                  }
+                }
+
+                if (d.properties.name == states[i]) {
+                  d.difference = match.new - match.old;
+                }
+              };
+            });
+            // console.log(mapdata);
+
+            svg.append("g")
+              .selectAll("path")
+              .data(mapdata)
+              .join("path")
+              .attr("fill", (d) => { return colorScale(d.difference) })
+              .style("stroke", "#ffff")
+              .attr('d', d3.geoPath()
+                .projection(projection));
+
+            const lgd = d3.select("#legends");
+            const lwidth = lgd.attr("width");
+            const lheight = lgd.attr("height");
+            lgd.attr("class", "legend2")
+              .attr("width", 140)
+              .attr("height", 200)
+              .attr("transform", "translate(150," + 2600 + ")");
+
+            // create a list of keys
+            var keys = ["< -1 °C", "-1 ~ 0 °C", "0 ~ 1 °C", "1 ~ 2 °C", "2 ~ 3 °C", "3 ~ 4 °C", "> 4 °C"];
+            let value = [-2, -0.1, 0.5, 1.5, 2.5, 3.5, 4.5];
+
+            let size = 20;
+            lgd.selectAll("path")
+              .data(value)
+              .enter()
+              .append("rect")
+              .attr("x", 10)
+              .attr("y", function (d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+              .attr("width", size)
+              .attr("height", size)
+              .style("fill", function (d) { return colorScale(d) })
+
+            lgd.selectAll("text")
+              .data(keys)
+              .enter()
+              .append("text")
+              .attr("x", 40)
+              .attr("y", function (d, i) { return 23 + i * (size + 5)}) // 100 is where the first dot appears. 25 is the distance between dots
+              .style("fill", 'black')
+              .attr("font-size", "10")
+              .text(function (d) { return d })
+              // .attr("text-anchor", "left")
+              // .style("alignment-baseline", "middle")
+
+          });
+      });
+
+  </script>
+  <p class="description">The heatmap above shows the US average temperature changes of 1912 and 2012. The overall trend of the climate change is 50 states are getting hotter but Alaska is getting colder. As mentioned above, "Climate change not only rising average temperatures but also extreme weather events."<sup>3</sup> </p>
+<div id="footnotes">
+<p id="f_header">Footnotes</p>
+<p class="footnote">[1] https://climate.nasa.gov/effects/ </p>
+<p class="footnote">[2] https://climate.nasa.gov/evidence/ </p>
+<p class="footnote">[3] https://www.nationalgeographic.com/environment/global-warming/global-warming-overview/</p>
+<p class="footnote">[4] Data Source: https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data#GlobalLandTemperaturesByCountry.csv </p>
+
+
+</div>
+</div>
+<p> To learn more, visit: https://climate.nasa.gov/ </p>
+<p> To take action, visit: https://citizensclimatelobby.org/volunteer-for-climate-change/ </p>
+    </body>
+    </html>
