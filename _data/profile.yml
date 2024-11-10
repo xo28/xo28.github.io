@@ -41,15 +41,15 @@ education:
 
 experience:
 - name: Tencent AI Lab Seattle
-  # logo: /assets/images/badges/
+  logo: /assets/images/badges/tencent_logo.jpeg
   position: Research Intern of Speech and Language Processing
   date: May. 2024 - Nov. 2024
 - name: Rice University
-  # logo: /assets/images/badges/
+  logo: /assets/images/badges/rice_logo.jpg
   position: Research Assistant
   date: May. 2021 - Apr. 2022
 - name: University of Texas at Austin
-  # logo: /assets/images/badges/
+  logo: /assets/images/badges/ut_logo.png
   position: Research Assistant
   date: Feb. 2021 - Mar. 2021
 
