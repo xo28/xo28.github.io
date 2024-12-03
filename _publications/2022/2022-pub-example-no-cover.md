@@ -1,6 +1,6 @@
 ---
 title:          "Supertickets: Drawing task-agnostic lottery tickets from supernets via jointly architecture searching and parameter pruning"
-date:           2022-06-1 00:01:00 EST
+date:           2022-08-1 00:01:00 EST
 selected:       false
 pub:            "The European Conference on Computer Vision (ECCV)"
 # pub_pre:        "Submitted to "
