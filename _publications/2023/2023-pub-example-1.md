@@ -1,6 +1,6 @@
 ---
 title:          "Secure and Effective Data Appraisal for Machine Learning"
-date:           2023-01-05 00:01:00 +0800
+date:           2023-03-05 00:01:00 EST
 selected:       true
 pub:            "Arxiv"
 pub_date:       "2023"
