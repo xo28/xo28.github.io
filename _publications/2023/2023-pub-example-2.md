@@ -7,7 +7,7 @@ pub_date:       "2023"
 # abstract: >-
 
 
-# cover:          /assets/images/covers/cover2.jpg
+cover:          /assets/images/covers/ijcai23.png
 authors:
   - Xu Ouyang
   - Shahina Mohd Azam Ansari

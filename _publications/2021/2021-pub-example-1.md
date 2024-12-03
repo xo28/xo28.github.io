@@ -10,7 +10,7 @@ pub_date:       "2021"
 
 # abstract: >-
 
-# cover:          /assets/images/covers/cover3.jpg
+cover:          /assets/images/covers/neurips.png
 authors:
   - Yonggan Fu 
   - Qixuan Yu 

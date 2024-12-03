@@ -10,7 +10,7 @@ pub_date:       "2022"
 
 # abstract: >-
 
-# cover:          /assets/images/covers/cover3.jpg
+cover:          /assets/images/covers/VLSI22.png
 authors:
   - Yang Zhao 
   - Ziyun Li 
