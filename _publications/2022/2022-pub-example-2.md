@@ -1,5 +1,5 @@
 ---
-title:          "Contrastive quant: quantization makes stronger contrastive learning"
+title:          "Contrastive Quant: Quantization Makes Stronger Contrastive Learning"
 date:           2022-07-1 00:01:00 EST
 selected:       false
 pub:            "ACM/IEEE Design Automation Conference (DAC)"

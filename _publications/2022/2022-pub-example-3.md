@@ -1,5 +1,5 @@
 ---
-title:          "I-FlatCam: A 253 FPS, 91.49 µJ/frame ultra-compact intelligent lensless camera for real-time and efficient eye tracking in VR/AR"
+title:          "I-FlatCam: A 253 FPS, 91.49 µJ/frame Ultra-compact Intelligent Lensless Camera for Real-time and Efficient Eye Tracking in VR/AR"
 date:           2022-06-1 00:01:00 EST
 selected:       false
 pub:            "IEEE Symposium on VLSI Technology and Circuits (VLSI)"

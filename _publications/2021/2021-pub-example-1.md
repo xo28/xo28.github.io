@@ -1,5 +1,5 @@
 ---
-title:          "Drawing robust scratch tickets: Subnetworks with inborn robustness are found within randomly initialized networks"
+title:          "Drawing Robust Scratch Tickets: Subnetworks with Inborn Robustness are Found within Randomly Initialized Networks"
 date:           2021-07-1 00:01:00 EST
 selected:       false
 pub:            "The Conference on Neural Information Processing Systems (NeurIPS)"
