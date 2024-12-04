@@ -1,7 +1,7 @@
 ---
 title:          "Efficient NLP Model Finetuning via Multistage Data Filtering"
 date:           2023-01-21 00:01:00 EST
-selected:       false
+selected:       true
 pub:            "International Joint Conference On Artificial Intelligence (IJCAI)"
 pub_date:       "2023"
 # abstract: >-
