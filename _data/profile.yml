@@ -52,11 +52,11 @@ experience:
   date: May. 2024 - Nov. 2024
 - name: Rice University
   logo: /assets/images/badges/rice_logo.jpg
-  position: Research Assistant, Advised by Prof. Yingyan (Celine) Lin
+  position: Research Assistant, <a href="https://eiclab.scs.gatech.edu/pages/team.html">Prof. Yingyan (Celine) Lin</a>.
   date: May. 2021 - Apr. 2022
 - name: University of Texas at Austin
   logo: /assets/images/badges/ut_logo.png
-  position: Research Assistant, Advised by Prof. Atlas (Zhangyang) Wang
+  position: Research Assistant, <a href="https://vita-group.github.io/">Prof. Atlas (Zhangyang) Wang</a>.
   date: Feb. 2021 - Mar. 2021
 
 teachservice:
