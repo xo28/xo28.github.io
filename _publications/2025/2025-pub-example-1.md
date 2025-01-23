@@ -1,8 +1,8 @@
 ---
-title:          "SELECTFORMER: PRIVATE AND PRACTICAL DATA SELECTION FOR TRANSFORMERS"
+title:          "SelectFormer: Private and Practical Data Selection for Transformers"
 date:           2025-01-22 14:00:00 EST
 selected:       true
-pub:            "The Thirteenth International Conference on Learning Representations(ICLR) 2025"
+pub:            "The Thirteenth International Conference on Learning Representations (ICLR)"
 pub_date:       "2025"
 # abstract: >-
 #   Cover image is a photo by Thomas Renaud on Unsplash. The abstract of the publication is meant to be a TLDR (very brief summary with 1~2 sentences) of your paper.
