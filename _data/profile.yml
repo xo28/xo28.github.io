@@ -26,8 +26,7 @@ short_bio: >-
     Previously, I spent two great years with <a href="https://fxlin.github.io/" target="_blank">Prof. Felix Xiaozhu Lin</a> and <a href="https://yangfengji.net/" target="_blank">Prof. Yangfeng Ji</a> at UVA CS.
   </p>
   <p>
-  If you are interested in <b>collaborating</b> with me, feel free to shoot me an email! <br>
-  <span style="color: red;"><b>I'm looking for internship opportunities during Spring/Summer/Fall 2025</b>. Feel free to reach out!</span>
+  I'm always looking for collaboration and internship opportunities, feel free to shoot me an email! <br>
   </p>
 # and <a href="https://www.cs.virginia.edu/~az9eg/website/home.html">Prof. Aidong Zhang</a>
 
@@ -46,6 +45,10 @@ education:
   date: Aug. 2019 - Dec. 2020
 
 experience:
+- name: Bytedance Seed @San Jose
+  logo: /assets/images/badges/bytedance_logo.png
+  position: Student Researcher of LLM Models
+  date: May. 2024 - Nov. 2024
 - name: Tencent AI Lab Seattle
   logo: /assets/images/badges/tencent_logo.jpeg
   position: Research Intern of Speech and Language Processing
@@ -66,4 +69,4 @@ teachservice:
   date: 2024 Spring
 - name: CS6501 Natural Language Processing, Teaching Assistant
   date: 2023 Fall
-- name: ICLR 2025 Reviewer
+- name: Reviewer: ICLR 2025, COLM 2025

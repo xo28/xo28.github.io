@@ -1,5 +1,5 @@
 ---
-title:          "SelectFormer: Private and Practical Data Selection for Transformers"
+title:          "Selectformer in Data Markets: Privacy-Preserving and Efficient Data Selection for Transformers with Multi-Party Computation"
 date:           2025-01-22 14:00:00 EST
 selected:       true
 pub:            "The Thirteenth International Conference on Learning Representations (ICLR)"
