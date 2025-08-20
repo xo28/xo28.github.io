@@ -8,8 +8,8 @@ pub_date:       "2025"
 #   Cover image is a photo by Thomas Renaud on Unsplash. The abstract of the publication is meant to be a TLDR (very brief summary with 1~2 sentences) of your paper.
 cover:          /assets/images/covers/fig_1.svg
 authors:
-- Xu Ouyang <sup>*</sup>
-- Shengzhuang Chen <sup>*</sup>
+- <b>Xu Ouyang</b><sup>*</sup>
+- Shengzhuang Chen<sup>*</sup>
 - Michael Arthur Leopold Pearce
 - Thomas Hartvigsen
 - Jonathan Richard Schwarz
