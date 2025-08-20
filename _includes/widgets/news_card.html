@@ -1,5 +1,5 @@
 {% assign news_by_year = site.news | sort: "date" | reverse | slice: 0, include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <div class="my-3 bg-white shadow-sm rounded-sm">
     <h6 class="p-3 mb-0 border-bottom border-gray"><i class="fas fa-rss"></i> News</h6>
     <div class="px-3 pb-1">
@@ -10,7 +10,7 @@
             <div class="media-body">
                 {% for item in year.items %}
                 <div class="my-1 d-flex">
-                    &#x2022; <div>{{ item.title }}</div>
+                    &#x2022; &nbsp; <div>{{ item.title }}</div>
                     <div class="ml-auto mt-auto text-muted no-break"><i>{{ item.date | date: "%b %d" }}</i></div>
                 </div>
                 {% endfor %}

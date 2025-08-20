@@ -14,5 +14,5 @@ authors:
 - Thomas Hartvigsen
 - Jonathan Richard Schwarz
 links:
-  Paper: https://xo28.github.io/ADMIRE-BayesOpt-homepage/
+  Homepage: https://xo28.github.io/ADMIRE-BayesOpt-homepage/
 ---
