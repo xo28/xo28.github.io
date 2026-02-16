@@ -49,7 +49,7 @@ experience:
 - name: Bytedance Seed @San Jose
   logo: /assets/images/badges/bytedance_logo.png
   position: Student Researcher of LLM Models
-  date: Jun. 2025 - Dec. 2025
+  date: Jun. 2025 - Feb. 2026
 - name: Tencent AI Lab Seattle
   logo: /assets/images/badges/tencent_logo.jpeg
   position: Artificial General Intelligence Research Intern
@@ -64,10 +64,12 @@ experience:
   date: Feb. 2021 - Mar. 2021
 
 teachservice:
+- name: CS4710 Artificial Intelligence, Teaching Assistant
+  date: 2026 Spring
 - name: CS4501 Natural Language Processing, Teaching Assistant
   date: 2024 Fall
 - name: CS6316 Machine Learning, Teaching Assistant
   date: 2024 Spring
 - name: CS6501 Natural Language Processing, Teaching Assistant
   date: 2023 Fall
-- name: "Reviewer: ICLR 2025, COLM 2025"
+- name: "Reviewer: ICLR 2025/2026, COLM 2025/2026, ICML 2026"
