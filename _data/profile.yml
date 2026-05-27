@@ -11,7 +11,8 @@ positions:
 email: "ftp8nr@virginia.edu"
 # cv_link: link-to-your-cv-file
 gscholar: IrM4gpwAAAAJ  # This is an example, replace it with your own Google Scholar ID
-# github: your_github_id
+github: xo28
+huggingface: Xu-Ouyang
 # twitter: your_twitter_id  # Do not include the '@' symbol
 # wechat_qrcode: /assets/images/etc/wechat.jpg
 # wechat_prompt: >-
@@ -22,19 +23,20 @@ linkedin: xu-ouyang-b0a2351a0
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    Greetings! My name is <b>Xu Ouyang</b>, a final-year Computer Science Ph.D. student at University of Virginia. I'm fortunately advised by <a href="https://www.tomhartvigsen.com/">Prof. Thomas Hartvigsen</a>.
-    I spent two great years with <a href="https://fxlin.github.io/" target="_blank">Prof. Felix Xiaozhu Lin</a> and <a href="https://yangfengji.net/" target="_blank">Prof. Yangfeng Ji</a> at UVA CS.
-    Outside UVA, I have done research and internships at <b>ByteDance Seed</b>, <b>ByteDance Applied ML</b>, <b>Tencent AI Lab Seattle</b>, <b>Rice University</b> (with <a href="https://eiclab.scs.gatech.edu/" target="_blank">Prof. Yingyan (Celine) Lin</a>), and <b>UT Austin</b> (with <a href="https://vita-group.github.io/" target="_blank">Prof. Atlas (Zhangyang) Wang</a>).
+    Greetings! I'm <b>Xu Ouyang</b>, a final-year Computer Science Ph.D. student at the University of Virginia, advised by <a href="https://www.tomhartvigsen.com/">Prof. Thomas Hartvigsen</a>. My research centers on the <b>science of large language models</b> &mdash; scaling laws, training dynamics, data-centric pretraining, and emerging architectures such as <b>continuous diffusion LLMs</b>.
+  </p>
+  <p>
+    Recent first-author work includes <b>ICML 2026</b> (the &ldquo;Shannon Scaling Law&rdquo;, now used internally at <b>ByteDance Seed</b> for large-scale training-dynamics analysis), <b>ACL 2025 Main</b> (low-bit quantization scaling laws, with <b>1500+ open quantized LLM checkpoints</b> released on <a href="https://huggingface.co/Xu-Ouyang" target="_blank">HuggingFace</a>), and <b>TMLR 2025</b> (<a href="https://xo28.github.io/ADMIRE-BayesOpt-homepage/" target="_blank">ADMIRE-BayesOpt</a> &mdash; a multi-fidelity Bayesian-optimization framework for <b>LLM data-mixture re-weighting</b> that delivers <b>5&times;+ speedups</b> in finding optimal pretraining and SFT mixtures, with 460 training runs / 13,000+ GPU hours released to the community). Earlier I spent two great years with <a href="https://fxlin.github.io/" target="_blank">Prof. Felix Xiaozhu Lin</a> and <a href="https://yangfengji.net/" target="_blank">Prof. Yangfeng Ji</a> at UVA CS, and have done research and internships at <b>ByteDance Applied ML (MLSys)</b>, <b>ByteDance Seed (Doubao)</b>, <b>Tencent AI Lab Seattle</b>, <b>Rice University</b> (with <a href="https://eiclab.scs.gatech.edu/" target="_blank">Prof. Yingyan (Celine) Lin</a>), and <b>UT Austin</b> (with <a href="https://vita-group.github.io/" target="_blank">Prof. Atlas (Zhangyang) Wang</a>).
   </p>
   My research interests include:
     <ul>
       <li><b>Continuous Diffusion Large Language Models (dLLMs)</b></li>
       <li><b>Scaling Laws, Architectures, and Training Dynamics of LLMs</b></li>
-      <li><b>Data-Centric Machine Learning</b></li>
+      <li><b>Data-Centric Machine Learning (pretraining data processing &amp; mixture re-weighting)</b></li>
       <li><b>Efficient and Scalable Machine Learning Systems</b></li>
     </ul>
   <p>
-  I'm always looking for collaboration and internship opportunities, feel free to shoot me an email! <br>
+    <b>I am on the 2026&ndash;2027 job market for full-time LLM Research Scientist / Member of Technical Staff roles at frontier labs and big-tech LLM teams. Please feel free to reach out!</b>
   </p>
 # and <a href="https://www.cs.virginia.edu/~az9eg/website/home.html">Prof. Aidong Zhang</a>
 
@@ -83,4 +85,4 @@ teachservice:
   date: 2024 Spring
 - name: CS6501 Natural Language Processing, Teaching Assistant
   date: 2023 Fall
-- name: "Reviewer: ICLR 2025/2026, COLM 2025/2026, ICML/NeurIPS 2026"
+- name: "Reviewer: ICLR 2025/2026, COLM 2025/2026, ICML 2026 (Gold Reviewer, Top 25%), NeurIPS 2026"

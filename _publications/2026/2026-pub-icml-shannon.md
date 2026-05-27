@@ -4,9 +4,9 @@ date:           2026-05-01 08:00:00 EST
 selected:       true
 pub:            "The 43rd International Conference on Machine Learning (ICML)"
 pub_date:       "2026"
-# abstract: >-
-#   Cover image is a photo by Thomas Renaud on Unsplash. The abstract of the publication is meant to be a TLDR (very brief summary with 1~2 sentences) of your paper.
-cover:          /assets/images/covers/scalinglaw.png
+abstract: >-
+  A unified scaling law modeling LLM pretraining as information transmission over a noisy channel; reconciles monotonic pretraining scaling with U-shaped phenomena such as catastrophic overtraining and quantization-induced degradation. Adopted internally at ByteDance Seed for large-scale training-dynamics analysis.
+cover:          /assets/images/covers/icml.png
 authors:
 - Xu Ouyang
 - Deyi Liu

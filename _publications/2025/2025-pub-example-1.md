@@ -4,8 +4,8 @@ date:           2025-01-22 14:00:00 EST
 selected:       true
 pub:            "The Thirteenth International Conference on Learning Representations (ICLR)"
 pub_date:       "2025"
-# abstract: >-
-#   Cover image is a photo by Thomas Renaud on Unsplash. The abstract of the publication is meant to be a TLDR (very brief summary with 1~2 sentences) of your paper.
+abstract: >-
+  Privacy-preserving, efficient data selection for transformers via multi-party computation, enabling fine-grained data valuation in data markets without exposing raw samples.
 cover:          /assets/images/covers/iclr.png
 authors:
 - Xu Ouyang

@@ -65,6 +65,12 @@
                         </a>
                         {% endif %}
 
+                        {% if site.data.profile.huggingface %}
+                        <a class="pr-3 no-break" target="_blank" href="https://huggingface.co/{{ site.data.profile.huggingface }}">
+                            <i class="fas fa-cube"></i> HuggingFace
+                        </a>
+                        {% endif %}
+
                         {% if site.data.profile.wechat_qrcode %}
                         <a class="pr-3 no-break" data-toggle="modal" data-target="#modal-wechat">
                             <i class="fab fa-weixin"></i> WeChat
