@@ -20,41 +20,6 @@ navbar_title: Home
     {% include widgets/experience_card.html %}
 {% endif %}
 
-{% if site.data.display.homepage.show_research_highlights %}
-<div class="row mt-3">
-    <div class="col">
-        <div class="card border-0 shadow-sm bg-white">
-            <div class="card-body p-4">
-                <h6 class="mb-3"><i class="fas fa-flask"></i> Research Highlights</h6>
-                <div class="row">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="h-100 p-2 border rounded">
-                            <img src="{{ '/assets/images/covers/icml.png' | relative_url }}" class="img-fluid rounded mb-2" alt="Shannon Scaling Law">
-                            <div class="font-weight-bold small">Shannon Scaling Law &mdash; ICML 2026 <span class="text-muted">(ByteDance Seed)</span></div>
-                            <div class="small text-muted mt-1">A unified scaling law that models LLM pretraining as transmission over a noisy channel; reconciles monotonic scaling with U-shaped phenomena (catastrophic overtraining, quantization-induced degradation). Adopted internally at ByteDance Seed for large-scale training-dynamics analysis.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="h-100 p-2 border rounded">
-                            <img src="{{ '/assets/images/covers/acl25.png' | relative_url }}" class="img-fluid rounded mb-2" alt="Quantization Scaling Laws">
-                            <div class="font-weight-bold small">Quantization Scaling Laws + 1500+ Open Checkpoints &mdash; ACL 2025 Main <span class="text-muted">(Tencent AI Lab)</span></div>
-                            <div class="small text-muted mt-1">Discovered that low-bit quantization favors undertrained LLMs but causes significant degradation on fully-trained models. Released <a href="https://huggingface.co/Xu-Ouyang" target="_blank">1500+ quantized LLM checkpoints</a> across model sizes, training-token budgets, and bit widths.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="h-100 p-2 border rounded">
-                            <img src="{{ '/assets/images/covers/scalinglaw.png' | relative_url }}" class="img-fluid rounded mb-2" alt="Continuous Diffusion LLMs">
-                            <div class="font-weight-bold small">Continuous Diffusion LLMs <span class="text-muted">(ByteDance Applied ML, ongoing)</span></div>
-                            <div class="small text-muted mt-1">Adapting a pretrained 16B-parameter MoE LLM into a bidirectional-attention continuous diffusion generator, with a novel manifold-preserving corruption process aligned with the coarse-to-fine semantic structure of language.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endif %}
-
 {% if site.data.display.homepage.show_selected_publications %}
     {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
     {% 
