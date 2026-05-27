@@ -23,20 +23,20 @@ linkedin: xu-ouyang-b0a2351a0
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    Greetings! I'm <b>Xu Ouyang</b>, a final-year Computer Science Ph.D. student at the University of Virginia, advised by <a href="https://www.tomhartvigsen.com/">Prof. Thomas Hartvigsen</a>. My research centers on the <b>science of large language models</b> &mdash; scaling laws, training dynamics, data-centric pretraining, and emerging architectures such as <b>continuous diffusion LLMs</b>.
+    Greetings! I'm <b>Xu Ouyang</b>, a final-year Computer Science Ph.D. student at the University of Virginia, advised by <a href="https://www.tomhartvigsen.com/">Prof. Thomas Hartvigsen</a>. My research centers on the science of large language models &mdash; scaling laws, training dynamics, data-centric pretraining, and emerging architectures such as continuous diffusion LLMs.
   </p>
   <p>
-    Recent first-author work includes <b>ICML 2026</b> (the &ldquo;Shannon Scaling Law&rdquo;, now used internally at <b>ByteDance Seed</b> for large-scale training-dynamics analysis), <b>ACL 2025 Main</b> (low-bit quantization scaling laws, with <b>1500+ open quantized LLM checkpoints</b> released on <a href="https://huggingface.co/Xu-Ouyang" target="_blank">HuggingFace</a>), and <b>TMLR 2025</b> (<a href="https://xo28.github.io/ADMIRE-BayesOpt-homepage/" target="_blank">ADMIRE-BayesOpt</a> &mdash; multi-fidelity Bayesian optimization for <b>LLM data mixture reweighting</b>).
+    Recent first-author work includes <b>ICML 2026</b> (the &ldquo;Shannon Scaling Law&rdquo;, now used internally at ByteDance Seed for large-scale training-dynamics analysis), <b>ACL 2025 Main</b> (low-bit quantization scaling laws, with <b>1500+ open quantized LLM checkpoints</b> released on <a href="https://huggingface.co/Xu-Ouyang" target="_blank">HuggingFace</a>), and <b>TMLR 2025</b> (<a href="https://xo28.github.io/ADMIRE-BayesOpt-homepage/" target="_blank">ADMIRE-BayesOpt</a> &mdash; multi-fidelity Bayesian optimization for LLM data mixture reweighting).
   </p>
   <p>
-    Earlier I spent two great years with <a href="https://fxlin.github.io/" target="_blank">Prof. Felix Xiaozhu Lin</a> and <a href="https://yangfengji.net/" target="_blank">Prof. Yangfeng Ji</a> at UVA CS, and have done research and internships at <b>ByteDance Applied ML (MLSys)</b>, <b>ByteDance Seed (Doubao)</b>, <b>Tencent AI Lab Seattle</b>, <b>Rice University</b> (with <a href="https://eiclab.scs.gatech.edu/" target="_blank">Prof. Yingyan (Celine) Lin</a>), and <b>UT Austin</b> (with <a href="https://vita-group.github.io/" target="_blank">Prof. Atlas (Zhangyang) Wang</a>).
+    Earlier I spent two great years with <a href="https://fxlin.github.io/" target="_blank">Prof. Felix Xiaozhu Lin</a> and <a href="https://yangfengji.net/" target="_blank">Prof. Yangfeng Ji</a> at UVA CS, and have done research and internships at <b>ByteDance Applied ML (MLSys)</b>, <b>ByteDance Seed-LLM-Model</b>, <b>Tencent AI Lab Seattle</b>, Rice University (with <a href="https://eiclab.scs.gatech.edu/" target="_blank">Prof. Yingyan (Celine) Lin</a>), and UT Austin (with <a href="https://vita-group.github.io/" target="_blank">Prof. Atlas (Zhangyang) Wang</a>).
   </p>
   My research interests include:
     <ul>
-      <li><b>Continuous Diffusion Large Language Models (dLLMs)</b></li>
-      <li><b>Scaling Laws, Architectures, and Training Dynamics of LLMs</b></li>
-      <li><b>Data-Centric Machine Learning (pretraining data processing &amp; mixture re-weighting)</b></li>
-      <li><b>Efficient and Scalable Machine Learning Systems</b></li>
+      <li>Continuous Diffusion Large Language Models (dLLMs)</li>
+      <li>Scaling Laws, Architectures, and Training Dynamics of LLMs</li>
+      <li>Data-Centric Machine Learning (pretraining data processing &amp; mixture re-weighting)</li>
+      <li>Efficient and Scalable Machine Learning Systems</li>
     </ul>
   <p>
     <b style="color: #d9534f;">I am on the 2026&ndash;2027 job market for full-time industry research opportunities. Please feel free to reach out!</b>
