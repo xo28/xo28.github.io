@@ -29,11 +29,12 @@ short_bio: >-
     Recent first-author work includes <b>ICML 2026</b> (the &ldquo;Shannon Scaling Law&rdquo;, now used internally at ByteDance Seed for large-scale training-dynamics analysis), <b>ACL 2025 Main</b> (low-bit quantization scaling laws, with <b>1500+ open quantized LLM checkpoints</b> released on <a href="https://huggingface.co/Xu-Ouyang" target="_blank">HuggingFace</a>), and <b>TMLR 2025</b> (<a href="https://xo28.github.io/ADMIRE-BayesOpt-homepage/" target="_blank">ADMIRE-BayesOpt</a> &mdash; multi-fidelity Bayesian optimization for LLM data mixture reweighting).
   </p>
   <p>
-    Earlier I spent two great years with <a href="https://fxlin.github.io/" target="_blank">Prof. Felix Xiaozhu Lin</a> and <a href="https://yangfengji.net/" target="_blank">Prof. Yangfeng Ji</a> at UVA CS, and have done research and internships at <b>ByteDance Applied ML (MLSys)</b>, <b>ByteDance Seed-LLM-Model</b>, <b>Tencent AI Lab Seattle</b>, Rice University (with <a href="https://eiclab.scs.gatech.edu/" target="_blank">Prof. Yingyan (Celine) Lin</a>), and UT Austin (with <a href="https://vita-group.github.io/" target="_blank">Prof. Atlas (Zhangyang) Wang</a>).
+    Earlier I spent two great years with <a href="https://fxlin.github.io/" target="_blank">Prof. Felix Xiaozhu Lin</a> and <a href="https://yangfengji.net/" target="_blank">Prof. Yangfeng Ji</a> at UVA CS, and have done research and internships at <b>Tencent Hunyuan</b>, <b>ByteDance Applied ML (MLSys)</b>, <b>ByteDance Seed-LLM-Model</b>, <b>Tencent AI Lab Seattle</b>, Rice University (with <a href="https://eiclab.scs.gatech.edu/" target="_blank">Prof. Yingyan (Celine) Lin</a>), and UT Austin (with <a href="https://vita-group.github.io/" target="_blank">Prof. Atlas (Zhangyang) Wang</a>).
   </p>
   My research interests include:
     <ul>
       <li>Continuous Diffusion Large Language Models (dLLMs)</li>
+      <li>Multimodal &amp; Omni-Modal Learning</li>
       <li>Scaling Laws, Architectures, and Training Dynamics of LLMs</li>
       <li>Data-Centric Machine Learning (pretraining data processing &amp; mixture reweighting)</li>
       <li>Efficient and Scalable Machine Learning Systems</li>
@@ -58,6 +59,10 @@ education:
   date: Aug. 2019 - Dec. 2020
 
 experience:
+- name: Tencent Hunyuan
+  logo: /assets/images/badges/tencent_tsign_logo.png
+  position: Multimodal Researcher Intern (Omni-Modal)
+  date: Jun. 2026 - Present
 - name: ByteDance AML-MLSys @San Jose
   logo: /assets/images/badges/bytedance_logo.png
   position: Research Scientist Intern, Continuous Diffusion LLMs
@@ -67,7 +72,7 @@ experience:
   position: Student Researcher Intern, LLM Pretraining
   date: Jun. 2025 - Jan. 2026
 - name: Tencent AI Lab, Seattle
-  logo: /assets/images/badges/tencent_logo.jpeg
+  logo: /assets/images/badges/tencent_tsign_logo.png
   position: Artificial General Intelligence Research Intern
   date: May. 2024 - Nov. 2024
 - name: Rice University
