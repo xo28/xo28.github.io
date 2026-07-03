@@ -59,15 +59,15 @@ education:
   date: Aug. 2019 - Dec. 2020
 
 experience:
-- name: Tencent Hunyuan
+- name: Tencent Hunyuan, Palo Alto
   logo: /assets/images/badges/tencent_tsign_logo.png
   position: Multimodal Researcher Intern (Omni-Modal)
   date: Jun. 2026 - Present
-- name: ByteDance AML-MLSys @San Jose
+- name: ByteDance AML-MLSys, San Jose
   logo: /assets/images/badges/bytedance_logo.png
   position: Research Scientist Intern, Continuous Diffusion LLMs
   date: Mar. 2026 - May. 2026
-- name: ByteDance Seed-LLM-Model @San Jose
+- name: ByteDance Seed-LLM-Model, San Jose
   logo: /assets/images/badges/bytedance_logo.png
   position: Student Researcher Intern, LLM Pretraining
   date: Jun. 2025 - Jan. 2026
@@ -93,4 +93,4 @@ teachservice:
   date: 2024 Spring
 - name: CS6501 Natural Language Processing, Teaching Assistant
   date: 2023 Fall
-- name: "Reviewer: ICLR 2025/2026, COLM 2025/2026, ICML 2026 (Gold Reviewer, Top 25%), NeurIPS 2026"
+- name: "Reviewer: ICLR 2025/2026, COLM 2025/2026, ICML 2026 (Gold Reviewer, Top 25%), NeurIPS 2026, TMLR 2026"
